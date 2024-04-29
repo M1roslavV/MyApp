@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" th:href="@{/images/favicon.png}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/style/bootstrap.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/style/style.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/style/responsive.css}" />
+    <title>MyProperty</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-black position-fixed w-100" style="--bs-bg-opacity: .8; z-index: 10;" data-bs-theme="dark" >
+    <div class="container-fluid ">
+        <a class="navbar-brand" th:href="@{/}"><img th:src="@{images/logo.png}" alt="" class="border border-white" style="width: 125px; border-radius: 10px;"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" style="margin-right: 50px;" id="navbarScroll">
+            <ul class="navbar-nav my-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active text-white text-center" aria-current="page" th:href="@{/}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white text-center" href="#scroll-aboutUs">About us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white text-center" href="#scroll-reviews">Reviews</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white text-center" th:href="@{/#scroll-pricer}">Price</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white text-center" th:href="@{/login}">Sign in</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white text-center" th:href="@{/sign_up}">Sign up</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<header class="header-aboutUs">
+    <h2>Why conduct an inventory with InvenT genius</h2>
+</header>
+<main class="main">
+    <section class="main-aboutUs">
+        <div id="scroll-aboutUs"></div>
+        <div class="aboutUs-images">
+            <img th:src="@{images/aboutUs_team.png}" alt="">
+            <img th:src="@{images/aboutUs_women.png}" alt="">
+            <img th:src="@{images/aboutUs_men.png}" alt="">
+        </div>
+        <div class="aboutUs-text" style="color: var(--color-D);">
+            <h4 style="color: var(--color-B);" class="pb-1">ABOUT US</h4>
+            <h3 class="text-white">We are a large firm for your inventories from assets to goods</h3>
+            <p>We realize that for our clients, inventory management is a crucial part of their business for efficient inventory control. However, often there are not enough trained workers for this process...</p>
+            <p>In addition to operational complexity, companies also incur financial costs for inventory execution. These costs include salaries and contributions of employees for preparation, execution, and evaluation of inventories, overtime pay, night work, travel expenses, depreciation of own equipment, costs of purchasing or renting software and hardware, maintenance and repairs of hardware, structure of managers of the central office managing the agenda of inventories, minor costs for consumables.</p>
+            <p>Our main motto and mission is to free clients from this complex and time-consuming activity. The main advantage is a trained team of workers with their own equipment, through which we are able to guarantee you an accurate and objective result.</p>
+        </div>
+    </section>
+    <section class="d-flex flex-column align-items-center pt-5 pb-5" style="color: var(--bs-gray-100); background-color: var(--color-E);">
+        <h3 class="border-bottom border-3 pb-2 pt-4" style=" border-color: var(--color-B) !important;">Benefits for our customers</h3>
+        <div class="d-flex flex-column flex-sm-row gap-3 flex-wrap justify-content-center pb-5" style="width: 90%;">
+            <div class="d-flex flex-column gap-2 justify-content-center p-4 rounded-4 col-12 col-md-5 col-lg-3" style="background-color: var(--color-F);">
+                <h5>Financial benefit</h5>
+                <ul class="d-flex flex-column gap-2 ps-4" style="list-style: square;">
+                    <li>Inventory takes place outside the opening hours of the client's premises</li>
+                    <li>Savings on the purchase or update of software</li>
+                    <li>Elimination of costs for overtime hours and night work</li>
+                    <li>No need to purchase special equipment for performing inventories, consumables, etc.</li>
+                    <li>Logistic costs for transporting own personnel and equipment are eliminated</li>
+                </ul>
+            </div>
+            <div class="d-flex flex-column gap-2 justify-content-center p-4 rounded-4 col-12 col-md-5 col-lg-3" style="background-color: var(--color-F);">
+                <h5>Benefits for the customer's customers</h5>
+                <ul class="d-flex flex-column gap-2 ps-4" style="list-style: square;">
+                    <li>Our clients' employees can focus on their work and keep business units in perfect condition for customers</li>
+                    <li>Quick inventory with minimal impact on unit operations</li>
+                    <li>After the inventory is completed, the store is cleaned and the goods are arranged exactly according to the customer's requirements</li>
+                </ul>
+            </div>
+            <div class="d-flex flex-column gap-2 justify-content-center p-4 rounded-4 col-12 col-md-10 col-lg-3" style="background-color: var(--color-F);">
+                <h5>Effective inventory management</h5>
+                <ul class="d-flex flex-column gap-2 ps-4" style="list-style: square;">
+                    <li>Objective and accurate results</li>
+                    <li>Processing of reports and outputs from inventory</li>
+                    <li>Investigation of differences compared to the accounting inventory after the physical inventory is completed</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="main-contact">
+        <div class="contact-text">
+            <h4>HOW CAN WE HELP?</h4>
+            <h3>We are a creative design agency for inventory</h3>
+            <p>Efficient inventory is the key to keeping your business running. If you're looking for a partner who will provide you with accurate and fast results, contact us. Our specialists will ensure that your assets are carefully documented and correctly valued.</p>
+            <a href="#">Contact us</a>
+        </div>
+    </section>
+    <section class=" main-review">
+        <div id="scroll-reviews"></div>
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" style="z-index: 5; position: relative; top: 50%;">
+            <div class="carousel-inner review-container">
+                <div class="carousel-item review-item active">
+                    <img th:src="@{images/stars.png}" alt="">
+                    <p>This asset inventory application completely changed the way we manage our corporate assets. Its intuitive interface and advanced features have saved us a lot of time and money.</p>
+                    <h4>Tomáš Malý</h4>
+                </div>
+                <div class="carousel-item review-item">
+                    <img th:src="@{images/stars.png}" alt="">
+                    <p>After using this application, we realized how many errors were in our previous systems. The accuracy and reliability offered by the application are crucial for our business.</p>
+                    <h4>Marek Štastný</h4>
+                </div>
+                <div class="carousel-item review-item">
+                    <img th:src="@{images/stars.png}" alt="">
+                    <p>I am amazed at how easy it is to work with the application. Its user interface is clean and logical, which significantly reduces the time needed to train new employees.</p>
+                    <h4>Matyáš Smutný</h4>
+                </div>
+                <div class="carousel-item review-item">
+                    <img th:src="@{images/stars.png}" alt="">
+                    <p>In addition to the great features of the application, I must highlight the excellent customer service. The team is always ready to help and responds quickly to any questions or issues.</p>
+                    <h4>Matěj Odborný</h4>
+                </div>
+            </div>
+        </div>
+        <div class="review-buttons d-flex w-25 justify-content-center m-auto">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                <span id="prevR"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                <span id="nextR">NEXT</span>
+            </button>
+        </div>
+    </section>
+</main>
+<footer class="footer d-flex text-white">
+    <div class="footer-links">
+        <h3>Useful Links</h3>
+        <ul class="list-unstyled">
+            <li class="link-item"><a th:href="@{/}" >HOME</a></li>
+            <li class="link-item"><a href="#scroll-aboutUs">ABOUT US</a></li>
+            <li class="link-item"><a href="#scroll-reviews" >REVIEWS</a></li>
+            <li class="link-item"><a th:href="@{/#scroll-pricer}">PRICE</a></li>
+            <li class="link-item"><a th:href="@{/login}">SIGN IN</a></li>
+            <li class="link-item"><a th:href="@{/sign_up}">SIGN UP</a></li>
+        </ul>
+    </div>
+    <div class="footer-contacts">
+        <h3>Contact</h3>
+        <div class="item-contacts d-flex">
+            <img th:src="@{images/map.png}" alt="">
+            <p>Jiráskova 15, 520 08 Pardubice</p>
+        </div>
+        <div class="item-contacts d-flex">
+            <img th:src="@{images/email.png}" alt="">
+            <p>MyProperty@email.cz</p>
+        </div>
+        <div class="item-contacts d-flex">
+            <img th:src="@{images/phone.png}" alt="">
+            <p>+420 777 666 555</p>
+        </div>
+    </div>
+    <p class="copyright">© copyright 2023 MyProperty</p>
+</footer>
+<script th:src="@{/script/script.js}"></script>
+<script th:src="@{/script/bootstrap.bundle.js}"></script>
+</body>
+</html>

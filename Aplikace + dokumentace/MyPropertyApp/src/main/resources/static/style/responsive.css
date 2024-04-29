@@ -1,0 +1,348 @@
+@media screen and (min-width:600px){
+    .card-item>img{
+        width: 50px;
+    }
+    .main-cards{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .card{
+        width: 50%;
+    }
+    
+    #prevR::before{
+        border-width: 12px 12px 0 12px;
+    }
+    #prevR{
+        width: 35px;
+        height: 35px;
+    }
+    .price>h3{
+        font-size: 40px;
+    }
+    .container-flex>h4{
+        width: fit-content;
+    }
+    .slider-item>img{
+        transform: translateX(-2rem);
+    }
+    .services-part-one>img{
+        width: 80%;
+    }
+    .part-two-cards{
+        flex-direction: row;
+        width: 80%;
+    }
+    .part-two-item{
+        width: 33%;
+    }
+    .container-benefits{
+        flex-direction: row;
+    }
+    .item-benefits{
+        width: 40%;
+    }
+    .contacts-text{
+        width: 65%;
+    }
+    .contacts-item{
+        width: 60%;
+    }
+}
+
+@media screen and (min-width:770px){
+    .main-aboutUs{
+        flex-direction: row;
+        margin-left: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .aboutUs-images{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .aboutUs-images>img:nth-child(2){
+        display: block;
+        width: 70%;
+        align-self: flex-end;   
+    }
+    .review-item>img{
+        width: 30%;
+        margin: 0 35%;
+    }
+    .review-container{
+        width: 60%;
+    }
+    .container-pricer{
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+    }
+    .pricer-item{
+        width: 43%;
+        margin: 0;
+    }
+    .slider-item>img{
+        height: 100%;
+    }
+    .slider-item{
+        height: 100vh;
+    }
+    .contact-text{
+        width: 75%;
+    }
+    /****sign in****/
+    .sign{
+        flex-direction: row;
+        margin: 0 2.6%;
+        height: max-content;
+        padding-top: 7vh;
+    }
+    .sign-detail{
+        width: 40%;
+        border-radius: 15px 0 0 15px;
+        margin-left: 1%;
+    }
+    .sign-text>h1{
+        padding-top: 25px !important;
+        padding-bottom: 30px !important;
+    }
+    .sign-text>p:nth-child(2){
+        padding-bottom: 120px !important;
+    }
+    .sign-text>p:nth-last-child(1){
+        margin-top: 50px !important;
+    }
+    .sign-form, .sign-up-form{
+        width: 55%;
+        border-radius: 0 15px 15px 0;
+    }
+    .sign-form>form{
+        padding: 12% 0;
+    }
+}
+
+@media screen and (min-width:1100px){
+    /*14px*/ .footer-links, .footer-contacts, .pricer-properties>p, .review-item>p, .contact-text>p, .aboutUs-text>p, .service-text>p,.card-item>p, .copyright, .aboutUs-text>h4, .contact-text>h4, .part-one-text>p, .part-two-list, .part-two-item>p, .item-benefits>ul>li, .services-btn, .contacts-text>p {font-size: 16px;}
+    /*16px*/ .container-buttons>a, .service-btn, .aboutUs-text>a, .contact-text>a, .pricer-item>a, #nextR, .review-item>h4, .footer-links>h3, .footer-contacts>h3, .container-flex>h4, .part-two-item>h3, .services-item>h3, .item-benefits>h3, .services-text>h3 {font-size: 18px;}
+    /*20px*/ .card-item>h3, .service-text>h3, .aboutUs-text>h3, .contact-text>h3, .price>h5, .price>h4, .pricer-item>h3, .part-one-text>h3, .services-part-two>h3, .main-benefits>h3 {font-size: 22px;}
+    /*24px*/ .item-container>h3, .main-service>h2, .main-pricer>h2, .contacts-text>h2 {font-size: 26px;}
+    /*35px*/ .price>h3, .header-aboutUs>h2 {font-size: 37px;}
+
+
+    .item-container{
+        bottom: 8rem;
+    }
+    .main-aboutUs{
+        flex-direction: row;
+        margin-left: 0;
+        padding: 70px 60px 70px 40px;
+        gap: 50px;
+    }
+    .aboutUs-images{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .aboutUs-images{
+        width: 120%;
+    }
+    .aboutUs-images>img:nth-child(1){
+        width: 54%;  
+        align-self: flex-end;
+    }
+    .aboutUs-images>img:nth-child(2){
+        display: block;
+        width: 37%;
+        align-self: flex-end;  
+        margin-right: 17%; 
+    }
+    .aboutUs-images>img:nth-child(3){
+        display: block;
+        position: absolute;
+        width: 40%;
+        left: 3.5%;
+        top: 25%;   
+    }
+    .aboutUs-text>a{
+        bottom: 5px;
+    }
+    .review-container{
+        width: 50%;
+    }
+    .main-pricer{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .container-pricer{
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .pricer-item{
+        width: 32%;
+        margin: 0;
+    }
+    .contact-text{
+        width: 65%;
+    }
+    .service-item, .pricer-item{
+        width: 25%;
+    }
+    .slider-item>img{
+        height: 100vh;
+        transform: translate(0);
+    }
+    .item-benefits{
+        width: 28%;
+    }
+    .contacts-item{
+        width: 70%;
+    }
+
+    /****sign in****/
+    .sign{
+        width: 70%;
+        padding-top: 3.5vw;
+        margin: 0 auto;
+    }
+    .sign-form{
+        width: 55%;
+        border-radius: 0 15px 15px 0;
+    }
+    .sign-form>form{
+        padding: 12% 0;
+    }
+
+}
+
+@media screen and (min-width:1500px) {
+    .card-item{
+        width: 25%;
+    }
+    .service-container, .container-pricer{
+        gap: 30px;
+    }
+    .service-item, .pricer-item{
+        width: 25%;
+    }
+    .main-aboutUs{
+        padding-left: 15vw;
+        padding-right: 15vw;
+    }
+    .contact-text{
+        width: 60%;
+    }
+    .review-item > img{
+        width: 22%;
+        margin: 0 39%;
+    }
+    .slider-item>img{
+        height: 125%;
+    }
+    .services-part-one{
+        padding: 0 15%;
+    }
+    .services-part-two{
+        padding: 0 7%;
+    }
+    .item-benefits{
+        width: 25%;
+    }
+    .container-benefits{
+        padding-left: 2.5%;
+    }
+    .contacts-item{
+        width: 55%;
+    }
+    
+}
+
+@media screen and (min-width:1900px){
+    /*14px*/ .footer-links, .footer-contacts, .pricer-properties>p, .review-item>p, .contact-text>p, .aboutUs-text>p, .service-text>p,.card-item>p, .copyright, .aboutUs-text>h4, .contact-text>h4, .part-one-text>p, .part-two-list, .part-two-item>p, .item-benefits>ul>li, .services-btn, .contacts-text>p {font-size: 18px;}
+    /*16px*/ .container-buttons>a, .service-btn, .aboutUs-text>a, .contact-text>a, .pricer-item>a, #nextR, .review-item>h4, .footer-links>h3, .footer-contacts>h3, .container-flex>h4, .part-two-item>h3, .services-item>h3, .item-benefits>h3, .services-text>h3 {font-size: 20px;}
+    /*20px*/ .card-item>h3, .service-text>h3, .aboutUs-text>h3, .contact-text>h3, .price>h5, .price>h4, .pricer-item>h3, .part-one-text>h3, .services-part-two>h3, .main-benefits>h3 {font-size: 24px;}
+    /*24px*/ .item-container>h3, .main-service>h2, .main-pricer>h2, .contacts-text>h2 {font-size: 28px;}
+    /*35px*/ .price>h3, .header-aboutUs>h2 {font-size: 40px;}
+
+    .service-item, .pricer-item{
+        width: 20%;
+    }
+    .service-btn::after{
+        border-width: 8px 8px 0 8px;
+        left: 8.5rem;
+        bottom: 22.5px;
+    }
+    .main-aboutUs{
+        padding-left: 20vw;
+        padding-right: 20vw;
+    }
+    .contact-text{
+        width: 40%;
+    }
+    .review-container{
+        width: 30%;
+    }
+    #prev, #next{
+        width: 50px;
+    }
+    .slider-item>img{
+        width: 102vw;
+    }
+    .services-container{
+        width: 70%;
+        margin: 0 15%;
+    }
+    .services-part-one{
+        padding: 0 21%;
+    }
+    .services-part-two{
+        padding: 0 14%;
+    }
+    .item-benefits{
+        width: 22%;
+    }
+    .header-aboutUs{
+        height: 100vh;
+        background-size: 200rem;
+    }
+    .contacts-form{
+        width: 60%;
+    }
+    .header-contacts{
+        background-size: 100vw;
+    }
+}
+
+@media screen and (min-width:2700px){
+    /*14px*/ .footer-links, .footer-contacts, .pricer-properties>p, .review-item>p, .contact-text>p, .aboutUs-text>p, .service-text>p,.card-item>p, .copyright, .aboutUs-text>h4, .contact-text>h4, .part-one-text>p, .part-two-list, .part-two-item>p, .item-benefits>ul>li, .services-btn, .contacts-text>p {font-size: 24px;}
+    /*16px*/ .container-buttons>a, .service-btn, .aboutUs-text>a, .contact-text>a, .pricer-item>a, #nextR, .review-item>h4, .footer-links>h3, .footer-contacts>h3, .container-flex>h4, .part-two-item>h3, .services-item>h3, .item-benefits>h3, .services-text>h3 {font-size: 26px;}
+    /*20px*/ .card-item>h3, .service-text>h3, .aboutUs-text>h3, .contact-text>h3, .price>h5, .price>h4, .pricer-item>h3, .part-one-text>h3, .services-part-two>h3, .main-benefits>h3 {font-size: 35px;}
+    /*24px*/ .item-container>h3, .main-service>h2, .main-pricer>h2, .contacts-text>h2 {font-size: 40px;}
+    /*35px*/ .price>h3, .header-aboutUs>h2 {font-size: 51px;}
+    
+    .service-item, .pricer-item{
+        width: 15%;
+    }
+    .service-btn::after{
+        border-width: 9px 9px 0 9px;
+        left: 9.7rem;
+        bottom: 24px;
+    }
+    .contacts-form{
+        width: 50%;
+        height: 35vh;
+        justify-content: center;
+    }
+    .container-contacts{
+        gap: 60px;
+    }
+    .contacts-item{
+        width: 40%;
+    }
+    .contacts-item>img{
+        height: 130%;
+    }
+}

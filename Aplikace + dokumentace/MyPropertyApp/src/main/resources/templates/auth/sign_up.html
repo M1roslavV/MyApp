@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyProperty</title>
+    <link rel="icon" type="image/png" th:href="@{/images/favicon.png}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/style/bootstrap.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/style/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/style/responsive.css}">
+</head>
+<body style="background-image: url(/images/5442676.jpg);">
+    <div class="sign container-fluid mt-3">
+        <div class="sign-detail text-center p-4 text-white">
+            <div class="sign-text">
+                <a th:href="@{/}" style="text-decoration: none; color: var(--bs-gray-100);"><h1 class="pt-2 pb-4" style="filter: grayscale(1);">MyProperty</h1></a>
+                <p class="pb-5">With the power of MyProperty, you can now focus only on functionaries for your digital products, while leaving the UI design on us!</p>
+                <p class="mb-0">Do you have an account?</p>
+                <a th:href="@{/login}" class="btn btn-secondary mt-2">Sign in</a>
+                <p class="mt-3">Read our <a href="#" class="link-underline-secondary link-offset-1-hover text-secondary">terms</a> and <a href="#" class="link-underline-secondary link-offset-1-hover text-secondary">conditions</a></p>
+            </div>
+        </div>
+        <div class="sign-up-form p-5">
+            <form th:action="@{/sign_up/process}" th:object="${SingUpDto}" class="pb-2 pt-2" method="post">
+                <p th:if="${!param.isEmpty()}">Invalid registration</p>
+                <h3 class="mt-2">Account Sign up</h3>
+                <div class="d-flex flex-column">
+                    <div class="d-flex">
+                        <div class="w-50" style="padding-right: 5px;">
+                            <label>First name</label>
+                            <input type="text" th:field="*{firstName}" class="rounded border-0 mt-1 w-100" style="height: 30px;" required>
+                        </div>
+                        <div class="w-50" style="padding-left: 5px;">
+                            <label>Last name</label>
+                            <input type="text" th:field="*{lastName}" class="rounded border-0 mt-1 w-100" style="height: 30px;" required>
+                        </div>
+                    </div>
+                    <label class="mt-2">Company name</label>
+                    <input type="text" th:field="*{companyName}" class="border-0 mt-1" style="height: 30px;" placeholder="not required">
+                    <label class="mt-2">Email address</label>
+                    <input type="email" th:field="*{email}" name="username" class="rounded border-0 mt-1" style="height: 30px;" required>
+                    <div class="d-flex flex-column flex-sm-row mt-2">
+                        <div class="col-12 col-sm-6" style="padding-right: 5px;">
+                            <label>Password</label>
+                            <input type="password" th:field="*{password}" name="password" class="rounded border-0 mt-1 w-100" style="height: 30px;" required>
+                        </div>
+                        <div class="col-12 col-sm-6" style="padding-left: 5px;">
+                            <label>Confirm password</label>
+                            <input type="password" th:field="*{confirmPassword}" class="rounded border-0 mt-1 w-100" style="height: 30px;" required>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 mt-3">Sign up</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyProperty</title>
+    <link rel="icon" type="image/png" th:href="@{/images/favicon.png}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/style/bootstrap.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/style/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/style/responsive.css}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+<body>
+<nav class="d-flex justify-content-between px-3 pt-2 pb-2 position-fixed w-100 z-2" style="background-color: var(--color-E);">
+    <div class="d-flex">
+        <div class="align-content-center d-none d-lg-block" onclick="sideMenu()"><i class="bi bi-list p-1 border rounded-3 hover fs-4" style="background-color: var(--bs-gray-700);"></i></div>
+        <a th:href="@{/}" class="align-content-center ms-3"><img th:src="@{/images/logo.png}" class=" border rounded-3 border-white" alt="" style="width: 120px;"></a>
+    </div>
+    <div class="align-content-center d-block d-lg-none" onclick="topMenu()"><i class="bi bi-list p-1 border rounded-3 hover fs-4" style="background-color: var(--bs-gray-700);"></i></div>
+    <div class="d-none d-lg-flex align-items-center">
+        <i class="bi bi-bell-fill text-white p-2 fs-5 hover-i" onclick="toggleDisplay('notice')"></i>
+        <i class="bi bi-menu-up text-white p-2 fs-5 hover-i" onclick="toggleDisplay('apps')"></i>
+        <i class="bi bi-calendar2-day text-white p-2 fs-5 hover-i" onclick="toggleDisplay('calendar')"></i>
+        <i class="bi bi-person-fill text-white p-1 px-2 fs-5 border border-2 rounded-circle ms-2 hover-i" onclick="toggleDisplay('profil')"></i>
+    </div>
+</nav>
+<div class="position-relative">
+    <div class="box" id="profil">
+        <div class="box-inner d-flex flex-column" style="width: max-content;">
+            <a href="">Profile & Account</a>
+            <a href="">Chat</a>
+            <a href="">Setting</a>
+            <a th:href= "@{/logout}">Logout</a>
+        </div>
+    </div>
+    <div class="box" id="calendar" style="width: 190px;">
+        <div class="box-inner">
+            <div id="calendar-header">
+                <span id="calendar-prev">&#10094;</span>
+                <span id="calendar-month-year"></span>
+                <span id="calendar-next">&#10095;</span>
+            </div>
+            <table id="calendars">
+                <thead>
+                <tr>
+                    <th>Mo</th>
+                    <th>Tu</th>
+                    <th>We</th>
+                    <th>Th</th>
+                    <th>Fr</th>
+                    <th>Sa</th>
+                    <th>Su</th>
+                </tr>
+                </thead>
+                <tbody id="calendar-body"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="box" id="apps" style="width: 215px;">
+    <div class="box-inner d-flex flex-wrap gap-1">
+        <a href="https://discord.com/" class="d-flex flex-column align-items-center justify-content-end" style="width: 31.5%;" target="_blank">
+            <i class="bi bi-discord text-white fs-3"></i>
+            <span>Discord</span>
+        </a>
+        <a href="https://www.google.com/" class="d-flex flex-column align-items-center" style="width: 31.5%;" target="_blank">
+            <i class="bi bi-google text-white fs-3"></i>
+            <span>Google</span>
+        </a>
+        <a href="https://github.com/" class="d-flex flex-column align-items-center" style="width: 31.5%;" target="_blank">
+            <i class="bi bi-github text-white fs-3"></i>
+            <span>GitHub</span>
+        </a>
+        <a href="https://www.instagram.com/" class="d-flex flex-column align-items-center" style="width: 31.5%;" target="_blank">
+            <i class="bi bi-instagram text-white fs-3"></i>
+            <span>Instagram</span>
+        </a>
+        <a href="https://www.facebook.com/" class="d-flex flex-column align-items-center" style="width: 31.5%;" target="_blank">
+            <i class="bi bi-facebook text-white fs-3"></i>
+            <span>Facebook</span>
+        </a>
+        <a href="https://www.messenger.com/" class="d-flex flex-column align-items-center" style="width: 31.5%;" target="_blank">
+            <i class="bi bi-messenger text-white fs-3"></i>
+            <span>Messenger</span>
+        </a>
+        <a href="https://www.whatsapp.com/" class="d-flex flex-column align-items-center" style="width: 31.5%;" target="_blank">
+            <i class="bi bi-whatsapp text-white fs-3"></i>
+            <span>Whatsapp</span>
+        </a>
+        <a href="https://accounts.google.com/" class="d-flex flex-column align-items-center" style="width: 31.5%;" target="_blank">
+            <i class="bi bi-envelope text-white fs-3"></i>
+            <span>Gmail</span>
+        </a>
+        <a href="https://www.bing.com/" class="d-flex flex-column align-items-center" style="width: 31.5%;" target="_blank">
+            <i class="bi bi-bing text-white fs-3"></i>
+            <span>Bing</span>
+        </a>
+    </div>
+</div>
+<div class="box" id="notice">
+
+</div>
+<div class="pt-5 d-lg-none" id="topMenu-show" style="z-index: 1">
+    <a th:href="@{/dashboard}"><i class="bi bi-house-fill fs-5"></i> <span class="ps-4">Home</span></a>
+    <a th:href="@{/dashboard/list_of_property}"><i class="bi bi-boxes fs-5"></i> <span class="ps-4">Property</span></a>
+    <a href="#"><i class="bi bi-people-fill  fs-5"></i> <span class="ps-4">Employees</span></a>
+    <a href="#"><i class="bi bi-bell-fill fs-5"></i> <span class="ps-4">Notice</span></a>
+    <a href="#"><i class="bi bi-chat-dots-fill fs-5"></i> <span class="ps-4">Chat</span></a>
+    <a href="#"><i class="bi bi-person-fill fs-5"></i> <span class="ps-4">Profile</span></a>
+    <a href="#"><i class="bi bi-gear-fill fs-5"></i> <span class="ps-4">Setting</span></a>
+    <a th:href= "@{/logout}"><i class="bi bi-box-arrow-in-left fs-5"></i> <span class="ps-4">Logout</span></a>
+</div>
+<main class="d-flex pt-5 bg-light" style="height: 100vh;">
+    <div class="d-none d-lg-block" id="sideMenu-show">
+        <div class="d-flex flex-column justify-content-around ps-4 px-4 h-50" style="width: max-content;">
+            <a th:href="@{/dashboard}"><i class="bi bi-house-fill fs-5"></i> <span class="ps-4">Home</span></a>
+            <a th:href="@{/dashboard/list_of_property}"><i class="bi bi-boxes fs-5"></i> <span class="ps-4">Property</span></a>
+            <a href="#"><i class="bi bi-people-fill  fs-5"></i> <span class="ps-4">Employees</span></a>
+            <a href="#"><i class="bi bi-bell-fill fs-5"></i> <span class="ps-4">Notice</span></a>
+            <a href="#"><i class="bi bi-chat-dots-fill fs-5"></i> <span class="ps-4">Chat</span></a>
+            <a href="#"><i class="bi bi-person-fill fs-5"></i> <span class="ps-4">Profile</span></a>
+            <a href="#"><i class="bi bi-gear-fill fs-5"></i> <span class="ps-4">Setting</span></a>
+            <a th:href= "@{/logout}"><i class="bi bi-box-arrow-in-left fs-5"></i> <span class="ps-4">Logout</span></a>
+        </div>
+    </div>
+    <div class="content-app" >
+        <div class="bg-white rounded-3" style="width: 93%">
+            <div class="d-flex flex-row align-items-center pt-3 ps-5 rounded-top-3" style="background-color: var(--bs-gray-400); display: block">
+                <h4>All your Property</h4>
+                <a sec:authorize="hasAnyAuthority('ADMIN', 'OWNER')" th:href= "@{/dashboard/add_property}" class="mx-4 text-decoration-none align-self-start p-1 rounded-1 text-white add text-nowrap" style="background-color: var(--bs-gray-600);"><i class="bi bi-file-earmark-plus-fill"></i> ADD</a>
+            </div>
+            <div class="w-100 overflow-x-auto">
+                <table class="table table-light table-striped table-hover">
+                    <tr>
+                        <th class="col-2 text-nowrap"><a th:href="@{/dashboard/list_of_property(pageNo=${currentPage}, sortField='inventoryNumber', sortDir=${reverseSortDir})}" class="btn btn-outline-secondary w-100 ">Inventory Number</a></th>
+                        <th class="col-2"><a th:href="@{/dashboard/list_of_property(pageNo=${currentPage}, sortField='name', sortDir=${reverseSortDir})}" class="btn btn-outline-secondary w-100">Name</a></th>
+                        <th class="col-1"><a th:href="@{/dashboard/list_of_property(pageNo=${currentPage}, sortField='price', sortDir=${reverseSortDir})}" class="btn btn-outline-secondary w-100">Price</a></th>
+                        <th class="col-2 text-nowrap"><a th:href="@{/dashboard/list_of_property(pageNo=${currentPage}, sortField='responsiblePeople', sortDir=${reverseSortDir})}" class="btn btn-outline-secondary w-100">Responsible user</a></th>
+                        <th class="col-1"><a th:href="@{/dashboard/list_of_property(pageNo=${currentPage}, sortField='category', sortDir=${reverseSortDir})}" class="btn btn-outline-secondary w-100">Category</a></th>
+                        <th class="col-2"><a th:href="@{/dashboard/list_of_property(pageNo=${currentPage}, sortField='location', sortDir=${reverseSortDir})}" class="btn btn-outline-secondary w-100">Location</a></th>
+                        <th class="col-3">Action</th>
+                    </tr>
+                    <tr th:each="property : ${properties}" class="align-baseline">
+                        <td th:text="*{property.inventoryNumber}"></td>
+                        <td th:text="*{property.name}"></td>
+                        <td th:text="*{property.price}"></td>
+                        <td th:text="*{property.responsiblePeople}"></td>
+                        <td th:text="*{property.category.name}"></td>
+                        <td th:text="*{property.location.name}"></td>
+                        <td class="d-flex pb-4 pt-4">
+                            <a th:href="@{/dashboard/list_of_property/update/{id}(id = ${@userService.encrypt(property.id)})}" class="btn btn-success ">Update</a>
+                            <a th:href="@{/dashboard/detail_property/{id}(id = ${@userService.encrypt(property.id)})}" class="btn btn-secondary mx-3">Detail</a>
+                            <button class="btn btn-danger" type="button" data-bs-toggle="modal" th:data-bs-target="'#exampleModal' + ${property.id}">Remove</button>
+
+
+                            <div class="modal fade" th:id="'exampleModal' + ${property.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Remove Property</h1>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Are you sure with remove your Property</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">No</button>
+                                            <a th:href="@{/dashboard/list_of_property/remove/{id}(id = ${@userService.encrypt(property.id)})}" type="button" class="btn btn-danger">Yes</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="d-flex justify-content-end col-10 mx-5 mt-1 gap-2" th:if="${1< totalPages}">
+                <ul class="pagination pagination-sm no-margin pull-right gap-2">
+                    <li th:if="${currentPage > 1}">
+                        <a th:href="@{/dashboard/list_of_property(pageNo=${1}, sortField=${sortField}, sortDir=${sortDir})}" class="text-decoration-none"><i class="bi bi-arrow-left-square"></i></a>
+                    </li>
+                    <li th:each="i : ${#numbers.sequence(startsPage, endsPage)}" th:classappend="${currentPage == i ? 'active' : ''}">
+                        <a th:href="@{/dashboard/list_of_property(pageNo=${i}, sortField=${sortField}, sortDir=${sortDir})}" th:text="${i}" class="text-decoration-none"></a>
+                    </li>
+                    <li th:if="${currentPage < totalPages}">
+                        <a th:href="@{/dashboard/list_of_property(pageNo=${totalPages}, sortField=${sortField}, sortDir=${sortDir})}" class="text-decoration-none"><i class="bi bi-arrow-right-square"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+<script th:src="@{/script/script.js}"></script>
+<script th:src="@{/script/bootstrap.bundle.js}"></script>
+</body>
+</html>
